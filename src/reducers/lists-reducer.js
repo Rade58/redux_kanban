@@ -9,6 +9,9 @@
 import {lists as defaultLists} from '../normalized_data' 
 
 export default (lists = defaultLists, action) => {
+
+  
+
   // CURRENT STATE IS PASSED IF THERE'S NO ACTIONS
   return lists
 }

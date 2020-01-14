@@ -2,36 +2,20 @@ import React from 'react'
 import {App, list} from './styles/App.module.css'
 import Card from './components/Card'
 
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////JUST HERE FOR OCASIONAL INISIGHT OF WHAT I
-// TESTING list TREE
-
 import {connect} from 'react-redux'
 
-const mapListsToProps = (state, ownProps) => { // mapStateToProps HAS ACCESS TO WHOLE STATE
-// YOU CAN PICK WHAT YOU WANT FROM THE STATE 
-// AND PASS IT TO HIGHER ORDER COMPONENTS
-
-  return {lists: state.lists}
-
-}
-
-//
 
 
-const TestListsContainer = connect(mapListsToProps)((props) => {
-  
-  const {lists} = props
-  
-  console.log(lists)
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////JUST HERE FOR OCASIONAL INISIGHT INSIDE mapStateToProps
+// JUST TO SEE HOW IT WORKS
 
-  return (<div>
-    Lists are console logged
-  </div>)
-})
-
+import TrashComponent from './trash_stuff/trash'
+// DON'T PAY ATTENTION TO IT
+//  
 ///////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////
+
+
 
 
 export default props => {
@@ -42,8 +26,9 @@ export default props => {
         <Card card={{title: "blah",description: "something"}} />
       </section>
       <section className={list}>Hey  </section>
-
-      <TestListsContainer />
+      
+      {/*     ///////////////////////////////////////////*/}
+      <TrashComponent random_prop="random stuff" />
 
     </main>
   )   
