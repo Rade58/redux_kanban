@@ -1,0 +1,34 @@
+main.App {
+    border: tomato solid 4px;
+    width: 60vw;
+    margin: 0.2rem auto; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+main.App > section.list {
+
+    border: red solid 2px;
+    flex-basis: 13vw;
+    flex-grow: 2;
+    margin: 2vw;
+    box-sizing: content-box;
+    padding:0.6vw;
+    width: min-content;
+}
+
+
+
+main.App > section.users {
+    
+}
+
+
+
+@media screen and (max-width: 600px) {
+    main.App {
+        border: olive solid 4px;
+    
+    }
+}

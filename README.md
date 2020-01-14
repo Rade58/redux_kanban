@@ -1,1 +1,1 @@
-# kanban board project, made for practiceing `redux` and `react-redux`
+# kanban board project, made for practicing `redux` and `react-redux`

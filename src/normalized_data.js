@@ -1,4 +1,4 @@
-import normalizr from 'normalizr'
+import {normalize, schema} from 'normalizr'
 import * as fetchedData from './gathered_data.json'
 
 // for node testing
@@ -15,11 +15,11 @@ const arrayOfLists = fetchedData.lists
 
 // NORMALAZING DATA
 
-const userSchema = new normalizr.schema.Entity('users')         // STRING ARGUMENT DECIDES PROPERTY NAME OF THE OBJECT
+const userSchema = new schema.Entity('users')         // STRING ARGUMENT DECIDES PROPERTY NAME OF THE OBJECT
 
-const cardSchema = new normalizr.schema.Entity('cards', {assignedTo: userSchema})
+const cardSchema = new schema.Entity('cards', {assignedTo: userSchema})
 
-const listSchema = new normalizr.schema.Entity('lists', {
+const listSchema = new schema.Entity('lists', {
   cards: [cardSchema]         // THIS YOU'LL HAVE TWO entities INSIDE OBJECT
 })
 
@@ -27,9 +27,9 @@ const listSchema = new normalizr.schema.Entity('lists', {
 
 // IF YOU WRAP SHEMA IN ARRAY (SECOND ARGUMENT) YOU HAVE ARRAY result ,AND INSIDE WILL BE IDs
 
-const normalizedUsers = normalizr.normalize(arrayOfUsers, [userSchema]) //  { result: [**USER IDS INSIDE**],   entities: { users: {  **KEY(ID)/VALUE PAIRS**  }   }   }
+const normalizedUsers = normalize(arrayOfUsers, [userSchema]) //  { result: [**USER IDS INSIDE**],   entities: { users: {  **KEY(ID)/VALUE PAIRS**  }   }   }
 
-const normalizedLists = normalizr.normalize(arrayOfLists, [listSchema]) //  {   result: [**LIST IDS INSIDE**],   
+const normalizedLists = normalize(arrayOfLists, [listSchema]) //  {   result: [**LIST IDS INSIDE**],   
 //                                                                    entities: { 
 //                                                                      lists: {  **KEY(ID)/VALUE PAIRS**  }, cards: {  **KEY(ID)/VALUE PAIRS** }
 //                                                                    }   
@@ -63,8 +63,19 @@ const cards = {
 // console.log({users: normalizedUsers, lists: normalizedLists})
 // console.log({cards: normalizedLists.entities.cards})
 
-export default {
+export {
   users,
   lists,
   cards
 }
+
+// I'LL HAVE THREE REDUCERS (combining INTO ONE REDUCER)
+
+// EVERY ONE OF THEM WILL TAKE CARE OF THEIR OWN BRANCH OF THE STATE TREE
+
+// index.js FILE WILL BE THE ONE WHERE I'LL INSTATITE THE STATE STORE (WHERE ILL WRAP WHOLE APP INTO STATE Provider)
+// Provider COMPONENT IS FROM 'react-redux'
+
+// IN EVRY CONTAINER COMPONENT YOU'LL USE mapStateToProps (AND mapDispatchToProps IF REQUIRED)
+// YOU'LL PASS THEM TO THE connect HIGHER ORDER COMMPONENT (COMES FROM react-redux), TOGETHER WITH 'NORMAL REACT COMPONENT' 
+// connect WILL CREATE NEW COMPONENT WITH PASSED IN PROPS
