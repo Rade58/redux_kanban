@@ -1,6 +1,8 @@
 import {List} from '../styles/List.module.css'
 import React from 'react'
- 
+
+import CardContainer from '../containers/CardContainer'
+
 // mapStateToProps    NEED TO PASS IN PROPS TO THIS COMPONENT
 
 export default ({list = {}}) => {
@@ -9,6 +11,9 @@ export default ({list = {}}) => {
   const listId = list.id
   const cardIds = list.cards
 
+  console.log({title, listId, cardIds})
+
+
   // Cards OR CardsContainer NEED JUST TO BE FED WITH THIR IDS OR ID OF THE LIST THEY BELONG IN
 
   // WILL GIVE LIST ID TO CARDS FOR FUTUE PROOFING (IF CARDS NEEDS TO BE REMOVED OR MOVED)
@@ -16,7 +21,9 @@ export default ({list = {}}) => {
   return(
   <article className={List}>
     <h2>{title}</h2>
-    {/* PLACE FOR CARDS, OR CARDS CONTAINER */}
+    {cardIds.map(cardId => {
+      return (<CardContainer cardId={cardId} key={cardId} listId={listId} />)
+    })}
   </article>
   )
 }

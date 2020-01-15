@@ -15,9 +15,9 @@ const mapStateToProps = (state, ownProps) => {
 
   const list = lists[listId]
 
-  console.log(list, listId, lists)
+  // console.log(list, listId, lists)
 
-  return {lists, listId}
+  return {list, listId}
 
 }
 
