@@ -12,14 +12,14 @@ import TrashComponent from './trash_stuff/trash'
 //  
 //////////////////////////////////////////////////////////////////////////////
 
-
+import ListsContainer from './containers/ListsContainer'
 
 
 /////////////////////////////////////////////////////////////////////////////
 export default props => {
   return (
     <main className={App}>
-      {/* <ListsContainer />     */}
+      <ListsContainer />    
       {/*     ///////////////////////////////////////////*/}
       <TrashComponent random_prop="random stuff" />
 

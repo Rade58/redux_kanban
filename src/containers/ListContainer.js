@@ -11,15 +11,17 @@ const mapStateToProps = (state, ownProps) => {
 
   const listId = ownProps.listId
 
-  const lists = state.lists
+  const lists = state.lists.entities
+
+  const list = lists[listId]
+
+  console.log(list, listId, lists)
 
   return {lists, listId}
-
 
 }
 
 export default connect(mapStateToProps)(List)
-
 
 // TO CLERIFY PLURAL Lists COMPONENT WILL GIVE LIST ID TO THE INDIVIDUAL ListContainer
 
