@@ -10,6 +10,7 @@ import App from './App'
 
 // SO CALLED rootReducer WILL BE PRODUCED BY combineReducers FUNCTION ('redux')
 // AND USED WITH A STORE IN HERE
+
 import rootReducer from './reducers/root-reducer'
 
 import {Provider} from 'react-redux'
@@ -26,3 +27,5 @@ render(
   </Provider>,
   document.getElementById('root')
 )
+
+// JUST TO CLERIFY , INITIAL STATE IS HANDLED IN REDUCERS TOO

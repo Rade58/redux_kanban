@@ -7,16 +7,7 @@ main.App {
     flex-wrap: wrap;
 }
 
-main.App > section.list {
 
-    border: red solid 2px;
-    flex-basis: 13vw;
-    flex-grow: 2;
-    margin: 2vw;
-    box-sizing: content-box;
-    padding:0.6vw;
-    width: min-content;
-}
 
 
 

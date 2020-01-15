@@ -5,9 +5,9 @@ const mapStateToProps = (state, ownProps) => { // mapStateToProps HAS ACCESS TO 
     // YOU CAN PICK WHAT YOU WANT FROM THE STATE 
     // AND PASS IT THROUGH HIGHER ORDER COMPONENT
 
-    console.log({ownProps})
+    // console.log({ownProps})
 
-    return {lists: state.lists}
+  return {lists: state.lists}
 
 }
 
@@ -21,12 +21,13 @@ const mapStateToProps = (state, ownProps) => { // mapStateToProps HAS ACCESS TO 
 
 export default connect(mapStateToProps)((props) => {
     
-    const {lists} = props
+  const {lists} = props
     
-    console.log(lists)
+    // console.log(lists)
 
-    return (<div>
-    Lists are console logged
-    </div>)
+  return (<div>
+    trash   
+  </div>)
+  
 })
 
