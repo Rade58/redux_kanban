@@ -1,20 +1,13 @@
 main.App {
     border: tomato solid 4px;
-    width: 60vw;
+    width: 68vw;
     margin: 0.2rem auto; 
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: baseline;
 }
-
-
-
-
-
-main.App > section.users {
-    
-}
-
 
 
 @media screen and (max-width: 600px) {

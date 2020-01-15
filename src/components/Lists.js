@@ -4,10 +4,10 @@ import React from 'react'
 export default ({listIds}) => {
 
   return (
-  <section>
+  <React.Fragment>
     {listIds.map(listId => 
       <ListContainer key={listId} listId={listId} />)}
-  </section>
+  </React.Fragment>
   )
 
 }

@@ -7,7 +7,7 @@ import {App} from './styles/App.module.css'
 ////////////////////////JUST HERE FOR OCASIONAL INISIGHT INSIDE mapStateToProps
 // JUST TO SEE HOW IT WORKS
 
-import TrashComponent from './trash_stuff/trash'
+import TrashComponent from './trash_stuff_for_practice/trash'
 // DON'T PAY ATTENTION TO IT
 //  
 //////////////////////////////////////////////////////////////////////////////
@@ -21,7 +21,7 @@ export default props => {
     <main className={App}>
       <ListsContainer />    
       {/*     ///////////////////////////////////////////*/}
-      <TrashComponent random_prop="random stuff" />
+      {/* <TrashComponent random_prop="random stuff" /> */}
 
     </main>
   )   
