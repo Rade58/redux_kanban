@@ -67,3 +67,6 @@ console.log({cardsInsideLists: lists.entities['5e1ca6d7cb194218576d58b9'].cards}
 console.log({cards})
 console.log({oneCardObject: cards.entities['61047285193']})
 
+console.log({individualList: lists.entities['5e1ca6d7cb194218576d58b9']})
+
+

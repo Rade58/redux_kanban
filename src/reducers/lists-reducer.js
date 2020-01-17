@@ -8,9 +8,30 @@
 
 import {lists as defaultLists} from '../normalized_data' 
 
+const CREATE_CARD = "CREATE_CARD"
+
 export default (lists = defaultLists, action) => {
 
-  
+  if(action.type === CREATE_CARD){
+    const {cardId, listId} = action.payload
+
+    const cardsOfOneList = lists.entities[listId].cards    // IDS FOR CARDS, THAT BELONGS TO SPECIFIED LIST
+    const cards = cardsOfOneList.concat(cardId)
+
+    return {
+      entities: {
+        ...lists.entities,
+        [listId]: {
+          ...lists.entities[listId],
+          cards
+        }
+      },
+
+      ids: [...lists.ids]
+
+    }
+
+  }
 
   // CURRENT STATE IS PASSED IF THERE'S NO ACTIONS
   return lists

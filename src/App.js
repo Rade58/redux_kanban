@@ -8,11 +8,14 @@ import {App} from './styles/App.module.css'
 // JUST TO SEE HOW IT WORKS
 
 import TrashComponent from './trash_stuff_for_practice/trash'
+
+import CreateCard from './components/CreateCard'
 // DON'T PAY ATTENTION TO IT
 //  
 //////////////////////////////////////////////////////////////////////////////
 
 import ListsContainer from './containers/ListsContainer'
+
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -22,6 +25,7 @@ export default props => {
       <ListsContainer />    
       {/*     ///////////////////////////////////////////*/}
       {/* <TrashComponent random_prop="random stuff" /> */}
+      {/* <CreateCard /> */}
 
     </main>
   )   
